@@ -1,20 +1,10 @@
-import React, { useState, useEffect, useRef } from "react"
-import Header from "../components/header"
-import { Link } from "gatsby"
-import Seo from "../components/seo"
-import logoCeramika from "/static/images/CERAMIKAlogo.png"
-import fb from "/static/images/facebookcera.png"
-import promo1 from "/static/images/promo11.webp"
-import promo2 from "/static/images/promo22.webp"
-import promo3 from "/static/images/promo33.webp"
-import promo4 from "/static/images/promo44.webp"
-import promo5 from "/static/images/promo55.webp"
-import promo6 from "/static/images/promo66.webp"
-import promo7 from "/static/images/promo77.webp"
-import promo8 from "/static/images/promo88.webp"
+import React, { useState } from "react";
+import Header from "../components/header";
+import Seo from "../components/seo";
+import promotions from "../data/promotions.json";
 
 const Hits = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <div className="wrapper">
@@ -28,119 +18,37 @@ const Hits = () => {
           Zakup i rezerwacja <a href="tel:+48857474947">tel: 85 74 74 947</a>
         </p>
 
+        {/* Promocje z popupa (maksymalnie 4) */}
         <div className="promo-boxes">
-          <div className="promo-img-boxes">
-            <div className="promo-one">
-              <img src={promo1} className="promo-img" />
-              <p>BRISBANE DRĄŻONA WDF22 215x100x65mm</p>
-              <p>3,80 zł/szt</p>
-            </div>
-            <div className="promo-one">
-              <img src={promo2} className="promo-img" />
-              <p>GRANITY PEŁNA VNF64 240x115x71mm</p>
-              <p>6,40 zł/szt</p>
-            </div>
-          </div>
-
-          <hr></hr>
-
-          <div className="promo-img-boxes">
-            <div className="promo-one">
-              <img src={promo3} className="promo-img" />
-              <p>HASTINGS PEŁNA VNF61 240x115x71mm</p>
-              <p>6,40 zł/szt</p>
-            </div>
-            <div className="promo-one">
-              <img src={promo4} className="promo-img" />
-              <p>MARGATE PEŁNA VNF21 240x115x71mm</p>
-              <p>6,40 zł/szt</p>
-            </div>
-          </div>
-
-          <hr></hr>
-
-
+          {promotions
+            .filter(promo => promo.inPopup)
+            .slice(0, 4) // Wyświetl te same promocje, co w popupie (maks. 4)
+            .map((promo) => (
+              <div key={promo.id} className="promo-one">
+                <img src={promo.image} className="promo-img" alt={promo.title} />
+                <p>{promo.title}</p>
+                <p>{promo.price}</p>
+              </div>
+            ))}
         </div>
 
+        <hr />
+
+        {/* Pozostałe promocje */}
         <div className="promo-boxes">
-          <div className="promo-img-boxes">
-            <div className="promo-one">
-              <img src={promo5} className="promo-img" />
-              <p>PORTLAND DRĄŻONA LDF10 290x115x52mm</p>
-              <p>4,50 zł/szt</p>
-            </div>
-            <div className="promo-one">
-              <img src={promo6} className="promo-img" />
-              <p>STRATFORD PEŁNA VNF81 240x115x71mm</p>
-              <p>6,40 zł/szt</p>
-            </div>
-          </div>
-
-          <hr></hr>
-
-          <div className="promo-img-boxes">
-            <div className="promo-one">
-              <img src={promo7} className="promo-img" />
-              <p>VICTORIA PEŁNA VNF57 240x115x71mm</p>
-              <p>6,40 zł/szt</p>
-            </div>
-            <div className="promo-one">
-              <img src={promo8} className="promo-img" />
-              <p>PRADO RĘCZNIE FORMOWANA 215x100x65mm</p>
-              <p>3.99 zł/szt</p>
-            </div>
-          </div>
-          
-        </div>
-      </section>
-
-      <section
-        className={`${isMenuOpen ? "blurred contactmaps" : "contactmaps"}`}
-      >
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38298.791121565555!2d23.138007774676755!3d53.13398941076129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ffedad7d8a0fb%3A0xadd01a635f0ed3b3!2sCERAMIKA%20HMB%20-%20Ceg%C5%82y%20klinkierowe!5e0!3m2!1spl!2spl!4v1720721145919!5m2!1spl!2spl"
-          height="400"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </section>
-
-      <section className={`${isMenuOpen ? "blurred" : ""}`} id="footer">
-        <div className="logo-footer">
-          <img src={logoCeramika} />
-        </div>
-        <div className="medium-flex">
-          <div className="partners">
-            <Link to="/producenci">Producenci</Link>
-            <Link to="/partnerzy">Partnerzy</Link>
-          </div>
-          <div className="contact-footer">
-            <a>Viber: +48857474947</a>
-            <a
-              href="https://www.facebook.com/profile.php?id=100054375226875&ref=embed_page"
-              target="_blank"
-            >
-              <img src={fb} /> Facebook
-            </a>
-          </div>
-        </div>
-        <div className="partnersd">
-          <Link to="/producenci">Producenci</Link>
-          <Link to="/partnerzy">Partnerzy</Link>
-        </div>
-        <div className="contact-footerd">
-          <a>Viber: +48857474947</a>
-          <a
-            href="https://www.facebook.com/profile.php?id=100054375226875&ref=embed_page"
-            target="_blank"
-          >
-            <img src={fb} /> Facebook
-          </a>
+          {promotions
+            .filter(promo => !promo.inPopup) // Wyświetl promocje, które nie są w popupie
+            .map((promo) => (
+              <div key={promo.id} className="promo-one">
+                <img src={promo.image} className="promo-img" alt={promo.title} />
+                <p>{promo.title}</p>
+                <p>{promo.price}</p>
+              </div>
+            ))}
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Hits
+export default Hits;

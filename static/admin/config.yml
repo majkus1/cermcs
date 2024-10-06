@@ -1,15 +1,19 @@
 backend:
   name: git-gateway
-  branch: main # lub master w zależności od repozytorium
+  branch: main
 
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
 
 collections:
-  - name: "oferta"
-    label: "Oferta"
-    folder: "src/data/oferta"
+  - name: "promotions"
+    label: "Promocje"
+    folder: "src/data"
     create: true
+    extension: "json"
+    format: "json"
     fields:
       - { label: "Tytuł", name: "title", widget: "string" }
-      - { label: "Opis", name: "description", widget: "text" }
+      - { label: "Cena", name: "price", widget: "string" }
+      - { label: "Obraz", name: "image", widget: "image" }
+      - { label: "Pokazuj w popupie", name: "inPopup", widget: "boolean", default: true }

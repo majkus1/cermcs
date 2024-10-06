@@ -1,45 +1,44 @@
 [
-    {
-      "id": 1,
-      "title": "BRISBANE DRĄŻONA WDF22 215x100x65mm",
-      "price": "3,80 zł/szt",
-      "image": "/static/images/promo11.webp",
-      "inPopup": true
-    },
-    {
-      "id": 2,
-      "title": "GRANITY PEŁNA VNF64 240x115x71mm",
-      "price": "6,40 zł/szt",
-      "image": "/static/images/promo22.webp",
-      "inPopup": true
-    },
-    {
-      "id": 3,
-      "title": "HASTINGS PEŁNA VNF61 240x115x71mm",
-      "price": "6,40 zł/szt",
-      "image": "/static/images/promo33.webp",
-      "inPopup": true
-    },
-    {
-      "id": 4,
-      "title": "MARGATE PEŁNA VNF21 240x115x71mm",
-      "price": "6,40 zł/szt",
-      "image": "/static/images/promo44.webp",
-      "inPopup": true
-    },
-    {
-      "id": 5,
-      "title": "PORTLAND DRĄŻONA LDF10 290x115x52mm",
-      "price": "4,50 zł/szt",
-      "image": "/static/images/promo55.webp",
-      "inPopup": false
-    },
-    {
-      "id": 6,
-      "title": "STRATFORD PEŁNA VNF81 240x115x71mm",
-      "price": "6,40 zł/szt",
-      "image": "/static/images/promo66.webp",
-      "inPopup": false
-    }
-  ]
-  
+  {
+    "id": 1,
+    "title": "BRISBANE DRĄŻONA WDF22 215x100x65mm",
+    "price": "3,80 zł/szt",
+    "image": "/static/images/promo11.webp",
+    "inPopup": true
+  },
+  {
+    "id": 2,
+    "title": "GRANITY PEŁNA VNF64 240x115x71mm",
+    "price": "6,40 zł/szt",
+    "image": "/static/images/promo22.webp",
+    "inPopup": true
+  },
+  {
+    "id": 3,
+    "title": "HASTINGS PEŁNA VNF61 240x115x71mm",
+    "price": "6,40 zł/szt",
+    "image": "/static/images/promo33.webp",
+    "inPopup": true
+  },
+  {
+    "id": 4,
+    "title": "MARGATE PEŁNA VNF21 240x115x71mm",
+    "price": "6,40 zł/szt",
+    "image": "/static/images/promo44.webp",
+    "inPopup": true
+  },
+  {
+    "id": 5,
+    "title": "PORTLAND DRĄŻONA LDF10 290x115x52mm",
+    "price": "4,50 zł/szt",
+    "image": "/static/images/promo55.webp",
+    "inPopup": false
+  },
+  {
+    "id": 6,
+    "title": "STRATFORD PEŁNA VNF81 240x115x71mm",
+    "price": "6,40 zł/szt",
+    "image": "/static/images/promo66.webp",
+    "inPopup": false
+  }
+]
